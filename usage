@@ -1,0 +1,2 @@
+source ~/projects/rfid-led/.venv/bin/activate
+python3 rfid_led.py

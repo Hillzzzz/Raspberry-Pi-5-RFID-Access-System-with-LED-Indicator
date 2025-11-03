@@ -12,7 +12,7 @@ The system reads MIFARE cards, prints their UIDs, flashes an LED when a known ta
 
 ---
 
-## 🧠 Features
+## Features
 - Works with **libgpiod v2** (`/dev/gpiochip0`)
 - No deprecated `RPi.GPIO`
 - Compatible with Bookworm / Python 3.13
@@ -21,7 +21,7 @@ The system reads MIFARE cards, prints their UIDs, flashes an LED when a known ta
 
 ---
 
-## ⚙️ Hardware
+## Hardware
 
 | Component | Raspberry Pi Pin | Function |
 |------------|------------------|-----------|
@@ -40,7 +40,7 @@ LED wiring: **GPIO17 → 330 Ω → LED → GND**
 
 ---
 
-## 🧩 Software Setup
+## Software Setup
 
 ```bash
 sudo apt update
@@ -48,3 +48,12 @@ sudo apt install -y python3-libgpiod python3-rpi-lgpio python3-spidev gpiod
 sudo raspi-config nonint do_spi 0
 sudo usermod -aG gpio,spi $USER
 reboot
+
+##creating the project environment
+mkdir -p ~/projects/rfid-led
+cd ~/projects/rfid-led
+python3 -m venv --system-site-packages .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install mfrc522
+
